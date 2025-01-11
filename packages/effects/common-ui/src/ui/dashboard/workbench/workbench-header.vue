@@ -27,6 +27,7 @@ withDefaults(defineProps<Props>(), {
         <slot name="description"></slot>
       </span>
     </div>
+    <!--
     <div class="mt-4 flex flex-1 justify-end md:mt-0">
       <div class="flex flex-col justify-center text-right">
         <span class="text-foreground/80"> 待办 </span>
@@ -42,5 +43,6 @@ withDefaults(defineProps<Props>(), {
         <span class="text-2xl">300</span>
       </div>
     </div>
+    -->
   </div>
 </template>
