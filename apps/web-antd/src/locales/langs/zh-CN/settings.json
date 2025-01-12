@@ -1,6 +1,9 @@
 {
   "title": "设置",
+  "desc": "API 设置",
   "openai": "OpenAI",
+  "openai-key-secret": "API秘钥",
+  "openai-key-secret-placehold": "请输入OpenAI API秘钥",
   "vben": {
     "title": "项目",
     "about": "关于",

@@ -1,6 +1,9 @@
 {
   "title": "Setttings",
+  "desc": "API settings",
   "openai": "OpenAI",
+  "openai-key-secret": "Secret Key",
+  "openai-key-secret-placehold": "Please input your OpenAI secret key",
   "vben": {
     "title": "Project",
     "about": "About",
