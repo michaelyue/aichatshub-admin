@@ -9,7 +9,7 @@ import { useUserStore } from '@vben/stores';
 import { message } from 'ant-design-vue';
 
 import { useVbenForm } from '#/adapter/form';
-import { getUserAPIKey } from '#/api';
+import { getUserAPIKey, saveUserKey } from '#/api';
 import { $t } from '#/locales';
 
 const userStore = useUserStore();
@@ -46,9 +46,17 @@ const [BaseForm] = useVbenForm({
 });
 
 function onSubmit(values: Record<string, any>) {
-  message.success({
-    content: `form values: ${JSON.stringify(values)}`,
-  });
+  if (values.keysecret.length === 0) {
+    message.error({ content: 'api key secret is empty' });
+  } else {
+    const userKey: UserAPIBundle = {
+      keysecret: values.keysecret,
+    };
+    // let userKeyResult: null | UserKeyResult = null;
+    // userKeyResult =
+    saveUserKey(userKey);
+    message.success({ content: 'api key secret saved successfully' });
+  }
 }
 
 async function fetchUserKey() {
@@ -61,6 +69,7 @@ async function fetchUserKey() {
 onMounted(async () => {
   await fetchUserKey();
 });
+// formApi.setState({ submitButtonOptions: { show: false } });
 </script>
 
 <template>
